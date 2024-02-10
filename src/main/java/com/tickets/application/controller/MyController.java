@@ -1,6 +1,6 @@
 package com.tickets.application.controller;
 
-import com.tickets.application.datamodel.TicketDto;
+import com.tickets.application.dao.TicketDao;
 import com.tickets.application.service.Service;
 
 import lombok.extern.slf4j.Slf4j;
@@ -25,7 +25,7 @@ public class MyController {
     }
 
     @PostMapping("/pay")
-    public Service pay(@RequestParam(value = "key") String key, @RequestBody TicketDto request) {
+    public Service pay(@RequestParam(value = "key") String key, @RequestBody TicketDao request) {
 
         final Service response;
 

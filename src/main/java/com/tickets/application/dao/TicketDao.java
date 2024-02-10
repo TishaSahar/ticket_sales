@@ -1,6 +1,6 @@
-package com.tickets.application.datamodel;
+package com.tickets.application.dao;
 
-public class TicketDto {
+public class TicketDao {
 
     private int userId;
     private String itemId;

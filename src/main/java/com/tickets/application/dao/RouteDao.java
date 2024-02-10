@@ -1,5 +1,5 @@
-package com.tickets.application.datamodel;
+package com.tickets.application.dao;
 
-public class DataModel {
+public class RouteDao {
     
 }
