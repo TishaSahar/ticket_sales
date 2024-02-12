@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS carriers
+(
+    id UUID PRIMARY KEY,
+    name VARCHAR(30) NOT NULL,
+    phone VARCHAR(30)
+);
