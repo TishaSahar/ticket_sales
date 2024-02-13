@@ -29,6 +29,7 @@ public class TicketProvider {
     private final List<TicketFilter> ticketFilters;
 
     public List<TicketDao> getListOfTicketsByFilter(final TicketModelFilter ticketModelFilter) {
+        final int page = ticketModelFilter.getPage();
         List<Ticket> tickets = getAllTicketsEAGER();
         List<Ticket> availableTickets = tickets.stream()
                 .filter(ticket -> ticket.getUser() == null)
@@ -43,6 +44,7 @@ public class TicketProvider {
         }
 
         availableTickets.stream()
+                .skip(LIST_SIZE * page)
                 .limit(LIST_SIZE);
 
         return ticketConverter.toTicketDaoList(availableTickets);
