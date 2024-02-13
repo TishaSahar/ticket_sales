@@ -24,3 +24,6 @@ spring:
     user: ${spring.datasource.username}
     password: ${spring.datasource.password}
     drop-first: true
+
+service:
+  ticket_provider: 10

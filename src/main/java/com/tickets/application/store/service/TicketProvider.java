@@ -7,6 +7,7 @@ import com.tickets.application.store.model.Ticket;
 import com.tickets.application.store.model.requests.TicketModelFilter;
 import com.tickets.application.store.repository.TicketRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Propagation;
@@ -19,6 +20,9 @@ import java.util.UUID;
 @Service
 @RequiredArgsConstructor
 public class TicketProvider {
+
+    @Value("${service.ticket_provider}")
+    private int LIST_SIZE;
 
     private final TicketRepository ticketRepository;
     private final TicketConverter ticketConverter;
@@ -37,6 +41,9 @@ public class TicketProvider {
         for (TicketFilter filter : availableFilters) {
             availableTickets = filter.apply(availableTickets, ticketModelFilter);
         }
+
+        availableTickets.stream()
+                .limit(LIST_SIZE);
 
         return ticketConverter.toTicketDaoList(availableTickets);
     }
