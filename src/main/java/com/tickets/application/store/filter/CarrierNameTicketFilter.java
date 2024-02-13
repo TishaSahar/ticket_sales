@@ -1,7 +1,7 @@
 package com.tickets.application.store.filter;
 
 import com.tickets.application.store.model.Ticket;
-import com.tickets.application.store.model.TicketModelFilter;
+import com.tickets.application.store.model.requests.TicketModelFilter;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

@@ -21,6 +21,8 @@ import java.util.UUID;
 @AllArgsConstructor
 public class UserDao {
 
+    private UUID id;
+
     @NotBlank(message = "Name is the mandatory attribute")
     @Size(min = 2, max = 128, message = "Name should have a length between 2 and 128 characters")
     @Pattern(regexp = "^(?!\\s)(?!.*\\s$)(?!.*?--)[A-Za-z\\s-]*$", message = "First name can only contain Latin letters, spaces, and hyphens")

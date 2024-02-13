@@ -1,4 +1,4 @@
-package com.tickets.application.store.dao;
+package com.tickets.application.store.model.requests;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -13,11 +13,9 @@ import java.util.UUID;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class CarrierDao {
+public class TicketBuyRequest {
 
-    private UUID id;
+    private UUID userId;
 
-    private String name;
-
-    private String phone;
+    private UUID ticketId;
 }

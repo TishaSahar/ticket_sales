@@ -15,9 +15,15 @@ import java.util.UUID;
 @AllArgsConstructor
 public class RouteDao {
 
+    private UUID id;
+
     private UUID carrierId;
+
     private String departurePoint;
+
     private String destinationPoint;
+
     private Integer durationMinutes;
+
     private Integer capacity;
 }

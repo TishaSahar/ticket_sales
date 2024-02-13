@@ -4,7 +4,7 @@ import com.tickets.application.store.converter.TicketConverter;
 import com.tickets.application.store.dao.TicketDao;
 import com.tickets.application.store.filter.TicketFilter;
 import com.tickets.application.store.model.Ticket;
-import com.tickets.application.store.model.TicketModelFilter;
+import com.tickets.application.store.model.requests.TicketModelFilter;
 import com.tickets.application.store.repository.TicketRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -13,6 +13,8 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
@@ -46,5 +48,15 @@ public class TicketProvider {
     @Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.READ_COMMITTED, readOnly = true)
     private List<Ticket> getAllTicketsEAGER() {
         return ticketRepository.findAllTicketsWithDetails();
+    }
+
+    public Ticket getTicketById(final UUID ticketId) {
+        return getTicketOptionalById(ticketId)
+                .orElseThrow(() -> new RuntimeException("Can't find ticket"));
+    }
+
+    @Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.READ_COMMITTED, readOnly = true)
+    private Optional<Ticket> getTicketOptionalById(final UUID ticketId) {
+        return ticketRepository.findById(ticketId);
     }
 }

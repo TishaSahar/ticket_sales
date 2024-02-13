@@ -16,6 +16,8 @@ import java.util.UUID;
 @AllArgsConstructor
 public class TicketDao {
 
+    private UUID id;
+
     private UUID userId;
 
     private UUID routeId;

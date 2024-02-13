@@ -13,3 +13,5 @@ databaseChangeLog:
       file: db/changelog/version-1.0/006.insert.route-table.sql
   - include:
       file: db/changelog/version-1.0/007.insert.ticket-table.sql
+  - include:
+      file: db/changelog/version-1.0/008.insert.user-table.sql
