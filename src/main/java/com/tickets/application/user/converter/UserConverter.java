@@ -9,6 +9,7 @@ import org.mapstruct.Mapping;
 import org.mapstruct.Named;
 import org.mapstruct.ReportingPolicy;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -19,10 +20,13 @@ public interface UserConverter {
     @Mapping(target = "ticketIds", source = "tickets", qualifiedByName = "ticketsToTicketIds")
     UserDao toUserDao(final User user);
 
+    @Mapping(target = "tickets", source = "ticketIds", ignore = true)
     User toUser(final UserDao userDao);
 
     @Named("ticketsToTicketIds")
     default List<UUID> ticketsToTicketIds(List<Ticket> tickets) {
-        return tickets.stream().map(Ticket::getId).toList();
+        return tickets == null ?
+                new ArrayList<>() :
+                tickets.stream().map(Ticket::getId).toList();
     }
 }
