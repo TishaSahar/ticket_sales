@@ -38,9 +38,7 @@ public class TicketProvider {
             availableTickets = filter.apply(availableTickets, ticketModelFilter);
         }
 
-        return availableTickets.stream()
-                .map(ticket -> ticketConverter.toTicketDoa(ticket))
-                .toList();
+        return ticketConverter.toTicketDaoList(availableTickets);
     }
 
     //todo: make a custom filter, because so big request

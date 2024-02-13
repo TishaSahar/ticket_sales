@@ -10,6 +10,7 @@ import org.mapstruct.Mapping;
 import org.mapstruct.Named;
 import org.mapstruct.ReportingPolicy;
 
+import java.util.List;
 import java.util.UUID;
 
 @Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.IGNORE,
@@ -19,6 +20,8 @@ public interface TicketConverter {
     @Mapping(target = "userId", source = "user", qualifiedByName = "userToUserId")
     @Mapping(target = "routeId", source = "route", qualifiedByName = "routeToRouteId")
     TicketDao toTicketDoa(final Ticket ticket);
+
+    List<TicketDao> toTicketDaoList(final List<Ticket> tickets);
 
     @Named("userToUserId")
     default UUID userToUserId(User user) {
