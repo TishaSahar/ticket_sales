@@ -9,5 +9,5 @@ public interface TicketFilter {
 
     boolean isApplicable(TicketModelFilter ticketFilter);
 
-    void apply(List<Ticket> tickets, TicketModelFilter ticketFilter);
+    List<Ticket> apply(List<Ticket> tickets, TicketModelFilter ticketFilter);
 }

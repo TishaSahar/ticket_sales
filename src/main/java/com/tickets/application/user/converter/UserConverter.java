@@ -29,9 +29,4 @@ public interface UserConverter {
                 new ArrayList<>() :
                 tickets.stream().map(Ticket::getId).toList();
     }
-
-    @Named("userToUserId")
-    default UUID userToUserId(User user) {
-        return user.getId();
-    }
 }

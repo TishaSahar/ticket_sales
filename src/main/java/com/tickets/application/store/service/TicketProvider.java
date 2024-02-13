@@ -28,9 +28,13 @@ public class TicketProvider {
                 .filter(ticket -> ticket.getUser() == null)
                 .toList();
 
-        ticketFilters.stream()
+        List<TicketFilter> availableFilters = ticketFilters.stream()
                 .filter(ticketFilter -> ticketFilter.isApplicable(ticketModelFilter))
-                .peek(ticketFilter -> ticketFilter.apply(availableTickets, ticketModelFilter));
+                .toList();
+
+        for (TicketFilter filter : availableFilters) {
+            availableTickets = filter.apply(availableTickets, ticketModelFilter);
+        }
 
         return availableTickets.stream()
                 .map(ticket -> ticketConverter.toTicketDoa(ticket))

@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value = UserController.USER_URL)
 public class UserController {
 
-    public final static String USER_URL= "authenticate";
+    public final static String USER_URL= "/authenticate";
 
     private final UserRegistration userRegistration;
 

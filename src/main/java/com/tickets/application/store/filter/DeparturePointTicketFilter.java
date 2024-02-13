@@ -15,11 +15,12 @@ public class DeparturePointTicketFilter implements TicketFilter {
     }
 
     @Override
-    public void apply(List<Ticket> tickets, TicketModelFilter ticketFilter) {
-        tickets.removeIf(ticket -> {
-            final String departurePoint = ticket.getRoute().getDeparturePoint();
-            final String expectDeparturePoint = ticketFilter.getDeparturePoint();
-            return !departurePoint.equals(expectDeparturePoint);
-        });
+    public List<Ticket> apply(List<Ticket> tickets, TicketModelFilter ticketFilter) {
+        return tickets.stream()
+                .filter(ticket -> {
+                    final String departurePoint = ticket.getRoute().getDeparturePoint();
+                    final String expectDeparturePoint = ticketFilter.getDeparturePoint();
+                    return departurePoint.equals(expectDeparturePoint);
+                }).toList();
     }
 }

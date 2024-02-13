@@ -7,3 +7,9 @@ databaseChangeLog:
       file: db/changelog/version-1.0/003.create.route-table.sql
   - include:
       file: db/changelog/version-1.0/004.create.ticket-table.sql
+  - include:
+      file: db/changelog/version-1.0/005.insert.carrier-table.sql
+  - include:
+      file: db/changelog/version-1.0/006.insert.route-table.sql
+  - include:
+      file: db/changelog/version-1.0/007.insert.ticket-table.sql

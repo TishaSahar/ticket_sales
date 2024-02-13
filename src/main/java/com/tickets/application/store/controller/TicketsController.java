@@ -21,7 +21,7 @@ import java.util.List;
 @RequestMapping(value = TicketsController.TICKETS_URL)
 public class TicketsController {
 
-    public final static String TICKETS_URL = "tickets";
+    public final static String TICKETS_URL = "/tickets";
 
     private final TicketProvider ticketProvider;
 
