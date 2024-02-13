@@ -11,9 +11,10 @@ import org.springframework.stereotype.Component;
 public class UniqueEmailValidator implements ConstraintValidator<UniqueEmail, String> {
 
     private final UserRepository userRepository;
-
+    private final String test ="";
     @Override
     public boolean isValid(String email, ConstraintValidatorContext constraintValidatorContext) {
+        System.out.println(test);
         return userRepository
                 .findByEmail(email)
                 .isEmpty();
