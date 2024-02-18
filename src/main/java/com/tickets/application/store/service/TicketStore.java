@@ -15,7 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.UUID;
 
 /**
- * 
+ * Ticket store service.
  */
 @Service
 @RequiredArgsConstructor
