@@ -17,6 +17,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+/**
+ * Rest controller to the "tickets" get request.
+ */
 @Slf4j
 @RestController
 @RequiredArgsConstructor
@@ -29,6 +32,12 @@ public class TicketsController {
     private final TicketProvider ticketProvider;
     private final TicketStore ticketStore;
 
+    /**
+     * Mapping for the list of the tickets by filter.
+     * 
+     * @param ticketModelFilter
+     * @return the list of TicketDao.
+     */
     @GetMapping
     public ResponseEntity<List<TicketDao>> getListOfTicketsByFilter(@RequestBody final TicketModelFilter ticketModelFilter) {
         log.info("Get request to list of free tickets by filters");
@@ -38,6 +47,12 @@ public class TicketsController {
                 .body(tickets);
     }
 
+    /**
+     * Mapping for ticket purchases.
+     * 
+     * @param ticketBuyRequest
+     * @return TicketDao
+     */
     @PostMapping("/buy")
     public ResponseEntity<TicketDao> buyTicket(@RequestBody final TicketBuyRequest ticketBuyRequest) {
         log.info("Get request for buying ticket, for user with id :", ticketBuyRequest.getUserId());

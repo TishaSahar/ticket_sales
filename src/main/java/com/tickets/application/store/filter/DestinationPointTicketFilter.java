@@ -6,6 +6,10 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+/**
+ * DestinationPointTicketFilter.
+ * Implements tickets filtering.
+ */
 @Component
 public class DestinationPointTicketFilter implements TicketFilter {
 

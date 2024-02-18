@@ -6,6 +6,9 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+/**
+ * Time ticket filter.
+ */
 @Component
 public class TimeTicketFromFilter implements TicketFilter {
     @Override

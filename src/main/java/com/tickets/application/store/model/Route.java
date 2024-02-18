@@ -18,6 +18,9 @@ import lombok.Setter;
 
 import java.util.UUID;
 
+/**
+ * Route data model.
+ */
 @Getter
 @Setter
 @Builder

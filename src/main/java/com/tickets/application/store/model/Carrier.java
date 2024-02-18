@@ -14,6 +14,9 @@ import lombok.Setter;
 
 import java.util.UUID;
 
+/**
+ * Carrier data model.
+ */
 @Getter
 @Setter
 @Builder

@@ -6,6 +6,9 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+/**
+ * Carrier name ticket filter.
+ */
 @Component
 public class CarrierNameTicketFilter implements TicketFilter {
 

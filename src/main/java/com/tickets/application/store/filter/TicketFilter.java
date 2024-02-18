@@ -5,6 +5,10 @@ import com.tickets.application.store.model.requests.TicketModelFilter;
 
 import java.util.List;
 
+/**
+ * TicketFilter.
+ * Public interface for tickets validation.
+ */
 public interface TicketFilter {
 
     boolean isApplicable(TicketModelFilter ticketFilter);
