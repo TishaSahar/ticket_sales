@@ -58,7 +58,6 @@ public class TicketsController {
         log.info("Get request for buying ticket, for user with id :", ticketBuyRequest.getUserId());
         final TicketDao ticket = ticketStore.buyTicket(ticketBuyRequest);
         log.info("Tickets was bought success");
-        return ResponseEntity.ok()
-                .body(ticket);
+        return ResponseEntity.ok().body(ticket);
     }
 }

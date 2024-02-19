@@ -23,7 +23,7 @@ public class DestinationPointTicketFilter implements TicketFilter {
         return tickets.stream()
                 .filter(ticket -> {
                     final String destinationPoint = ticket.getRoute().getDestinationPoint();
-                    final String expectDestinationPoint = ticketFilter.getDeparturePoint();
+                    final String expectDestinationPoint = ticketFilter.getDestinationPoint();
                     return destinationPoint.equals(expectDestinationPoint);
                 }).toList();
     }

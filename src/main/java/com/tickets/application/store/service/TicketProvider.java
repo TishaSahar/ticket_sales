@@ -46,9 +46,9 @@ public class TicketProvider {
             availableTickets = filter.apply(availableTickets, ticketModelFilter);
         }
 
-        availableTickets.stream()
+        availableTickets = availableTickets.stream()
                 .skip(LIST_SIZE * page)
-                .limit(LIST_SIZE);
+                .limit(LIST_SIZE).toList();
 
         return ticketConverter.toTicketDaoList(availableTickets);
     }
