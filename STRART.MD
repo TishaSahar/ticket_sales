@@ -1,5 +1,5 @@
 ### Running All Services with latest build
-To start the application containers with the latest build:
+To run server and its docker containers:
 ```bash
-docker-compose -f docker-compose.yaml up -d --build
+run_local.sh
 ```

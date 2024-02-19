@@ -6,12 +6,14 @@ server:
   tomcat:
     accept-count: 100
 
+lombok:
+  addLombokGeneratedAnnotation: true
 #
 # Spring Properties
 #
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/testdb?serverTimezone=UTC
+    url: jdbc:postgresql://0.0.0.0:5432/testdb?serverTimezone=UTC
     username: postgres
     password: postgres
   jpa:
