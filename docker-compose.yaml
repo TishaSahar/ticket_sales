@@ -27,3 +27,14 @@ services:
       timeout: 10s
       retries: 5
     restart: on-failure
+  
+  ticket_sales-redis:
+    image: redis/redis-stack:latest
+    container_name: ticket_sales-redis
+    networks:
+      - ticket_sales-network
+    environment:
+      - REDIS_HOST=localhost
+      - REDIS_PORT=6379
+    ports:
+      - "6379:6379"
