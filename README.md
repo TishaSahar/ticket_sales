@@ -3,11 +3,11 @@ This is a Java microservice that implements the backend for the transport compan
 
 # Build
 Linux / Windows:
-- run <mvn clean install> from source directory
+- run "mvn clean install" from source directory
 
 # Launging
 Linux:
-- run <bash run_local.sh> from source directory
+- run "bash run_local.sh" from source directory
 
 Default service URI: http://localhost:8080
 
