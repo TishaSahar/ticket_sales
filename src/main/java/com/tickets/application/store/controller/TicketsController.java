@@ -47,11 +47,9 @@ public class TicketsController {
     @CachePut(value = "ResponseEntity<List<TicketDao>>", key="#ticketModelFilter")
     @GetMapping
     public ResponseEntity<List<TicketDao>> getListOfTicketsByFilter(@RequestBody final TicketModelFilter ticketModelFilter) {
-        log.info("Get request to list of free tickets by filters");
+        log.info("Get request to list of free tickets by filters: {}", ticketModelFilter.toString());
         final List<TicketDao> tickets = ticketProvider.getListOfTicketsByFilter(ticketModelFilter);
-        log.info("Tickets was gotten success");
-        return ResponseEntity.ok()
-                .body(tickets);
+        return ResponseEntity.ok().body(tickets);
     }
 
     /**
@@ -63,9 +61,14 @@ public class TicketsController {
     @CacheEvict(value = "ResponseEntity<TicketDao>", allEntries = true)
     @PostMapping("/buy")
     public ResponseEntity<TicketDao> buyTicket(@RequestBody final TicketBuyRequest ticketBuyRequest) {
-        log.info("Get request for buying ticket, for user with id :", ticketBuyRequest.getUserId());
-        final TicketDao ticket = ticketStore.buyTicket(ticketBuyRequest);
-        log.info("Tickets was bought success");
+        log.info("Get request for buying ticket, for user with id: {}", ticketBuyRequest.getUserId());
+        TicketDao ticket = new TicketDao();
+        try {
+            ticket = ticketStore.buyTicket(ticketBuyRequest);
+        } catch (RuntimeException e) {
+            log.info("This ticket is already bought. {}", e.getMessage());
+        }
+        log.info("Tickets has been bought success");
         return ResponseEntity.ok().body(ticket);
     }
 }

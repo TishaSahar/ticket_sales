@@ -8,6 +8,9 @@ import lombok.Setter;
 
 import java.util.UUID;
 
+/**
+ * Ticket buy model.
+ */
 @Getter
 @Setter
 @Builder

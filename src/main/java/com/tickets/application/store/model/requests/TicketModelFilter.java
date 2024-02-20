@@ -9,6 +9,9 @@ import lombok.Setter;
 import javax.validation.constraints.NotNull;
 import java.time.OffsetDateTime;
 
+/**
+ * Ticket model filter.
+ */
 @Getter
 @Setter
 @Builder

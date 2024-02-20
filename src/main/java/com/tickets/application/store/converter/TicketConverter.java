@@ -16,13 +16,14 @@ import java.util.UUID;
 /**
  * Construct ticket data access object.
  */
-@Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.IGNORE,
+@Mapper(componentModel = "spring",
+        unmappedTargetPolicy = ReportingPolicy.IGNORE,
         injectionStrategy = InjectionStrategy.FIELD)
 public interface TicketConverter {
 
     @Mapping(target = "userId", source = "user", qualifiedByName = "userToUserId")
     @Mapping(target = "routeId", source = "route", qualifiedByName = "routeToRouteId")
-    TicketDao toTicketDoa(final Ticket ticket);
+    TicketDao toTicketDao(final Ticket ticket);
 
     List<TicketDao> toTicketDaoList(final List<Ticket> tickets);
 

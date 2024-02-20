@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  * TicketFilter.
- * Public interface for tickets validation.
+ * Public interface for tickets filtering.
  */
 public interface TicketFilter {
 

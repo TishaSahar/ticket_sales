@@ -1,6 +1,7 @@
 #!/bin/bash
 
-# Run docker containeer with redis and postgresql volumes
+# Re run docker containeer with redis and postgresql volumes
+docker-compose down
 docker-compose -f docker-compose.yaml up -d --build
 
 # Run apring boot applicaton from target directory
