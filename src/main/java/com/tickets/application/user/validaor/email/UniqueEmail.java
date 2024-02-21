@@ -10,6 +10,9 @@ import java.lang.annotation.Target;
 import static java.lang.annotation.ElementType.FIELD;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
+/**
+ * Unique email validation interface.
+ */
 @Target({FIELD})
 @Retention(RUNTIME)
 @Constraint(validatedBy = UniqueEmailValidator.class)
@@ -21,5 +24,4 @@ public @interface UniqueEmail {
     Class<?>[] groups() default {};
 
     Class<? extends Payload>[] payload() default {};
-
 }

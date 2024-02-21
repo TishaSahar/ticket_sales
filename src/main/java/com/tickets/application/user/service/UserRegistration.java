@@ -10,6 +10,9 @@ import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+/**
+ * User registration.
+ */
 @Service
 @RequiredArgsConstructor
 public class UserRegistration {

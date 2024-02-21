@@ -18,6 +18,9 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 import java.util.UUID;
 
+/**
+ * User rest controller.
+ */
 @Slf4j
 @RestController
 @RequiredArgsConstructor

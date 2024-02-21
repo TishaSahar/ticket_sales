@@ -18,6 +18,9 @@ import lombok.Setter;
 import java.util.List;
 import java.util.UUID;
 
+/**
+ * User data transfer model.
+ */
 @Getter
 @Setter
 @Builder
